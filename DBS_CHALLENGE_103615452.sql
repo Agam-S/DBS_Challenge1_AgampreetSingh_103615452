@@ -108,3 +108,11 @@ Where e.Payment >
 ( SELECT AVG(E.Payment) 
     FROM BOOKING E
 );
+
+--Task 5
+CREATE VIEW [View1] AS
+SELECT C.GivenName, c.Surname, E.TourName, T.Description, E.EventYear, E.EventMonth, E.EventDay, E.Fee, B.Datebooked, B.Payment FROM Client C
+INNER JOIN BOOKING B ON C.ClientID = B.ClientID
+INNER JOIN EVENT E ON E.TourName = B.TourName
+INNER JOIN TOUR T ON T.TourName = E.TourName;
+
