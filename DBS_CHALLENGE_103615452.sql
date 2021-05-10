@@ -82,11 +82,29 @@ INSERT INTO Booking(ClientID, TourName, EventYear, EventMonth, EventDay, Payment
 INSERT INTO Booking(ClientID, TourName, EventYear, EventMonth, EventDay, Payment, DateBooked) VALUES (2, 'North', 2016, 'Feb', 13, 125, '2016-01-14');
 INSERT INTO Booking(ClientID, TourName, EventYear, EventMonth, EventDay, Payment, DateBooked) VALUES (3, 'North', 2016, 'Feb', 13, 225, '2016-02-03');
 INSERT INTO Booking(ClientID, TourName, EventYear, EventMonth, EventDay, Payment, DateBooked) VALUES (1, 'South', 2016, 'Jan', 9, 200, '2015-12-10');
-INSERT INTO Booking(ClientID, TourName, EventYear, EventMonth, EventDay, Payment, DateBooked) VALUES (2, 'South', 2016, 'Jan', 16, 200, '2015-12-18');
-INSERT INTO Booking(ClientID, TourName, EventYear, EventMonth, EventDay, Payment, DateBooked) VALUES (3, 'South', 2016, 'Jan', 16, 200, '2016-01-09');
-INSERT INTO Booking(ClientID, TourName, EventYear, EventMonth, EventDay, Payment, DateBooked) VALUES (2, 'West', 2016, 'Jan', 29, 225, '2015-12-17');
-INSERT INTO Booking(ClientID, TourName, EventYear, EventMonth, EventDay, Payment, DateBooked) VALUES (3, 'West', 2016, 'Jan', 29, 200, '2015-12-18');
+INSERT INTO Booking(ClientID, TourName, EventYear, EventMonth, EventDay, Payment, DateBooked) VALUES (2, 'West', 2016, 'Jan', 16, 200, '2015-12-18');
+INSERT INTO Booking(ClientID, TourName, EventYear, EventMonth, EventDay, Payment, DateBooked) VALUES (3, 'West', 2016, 'Jan', 16, 200, '2016-01-09');
+INSERT INTO Booking(ClientID, TourName, EventYear, EventMonth, EventDay, Payment, DateBooked) VALUES (2, 'South', 2016, 'Jan', 29, 225, '2015-12-17');
+INSERT INTO Booking(ClientID, TourName, EventYear, EventMonth, EventDay, Payment, DateBooked) VALUES (3, 'South', 2016, 'Jan', 29, 200, '2015-12-18');
 
-INSERT INTO Booking(ClientID, TourName, EventYear, EventMonth, EventDay, Payment, DateBooked) VALUES (103615452, 'West', 2016, 'Jan', 29, 200, '2015-12-30');
+INSERT INTO Booking(ClientID, TourName, EventYear, EventMonth, EventDay, Payment, DateBooked) VALUES (103615452, 'South', 2016, 'Jan', 29, 200, '2015-12-30');
 
-SELECT * FROM Tour  
+
+-- Task 4
+
+--QUERY 1
+SELECT C.GivenName, c.Surname, E.TourName, T.Description, E.EventYear, E.EventMonth, E.EventDay, E.Fee, B.Datebooked, B.Payment FROM Client C
+INNER JOIN BOOKING B ON C.ClientID = B.ClientID
+INNER JOIN EVENT E ON E.TourName = B.TourName
+INNER JOIN TOUR T ON T.TourName = E.TourName;
+
+--QUERY 2
+SELECT E.EventMonth, E.TourName, COUNT(*) as NumofBooking FROM Booking E
+GROUP BY EventMonth, TourName;
+
+-- Query 3
+SELECT * FROM Booking E
+Where e.Payment > 
+( SELECT AVG(E.Payment) 
+    FROM BOOKING E
+);
