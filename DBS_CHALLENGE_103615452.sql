@@ -105,7 +105,7 @@ GROUP BY EventMonth, TourName;
 -- Query 3
 SELECT * FROM Booking E
 Where e.Payment > 
-( SELECT AVG(E.Payment) 
+(SELECT AVG(E.Payment) 
     FROM BOOKING E
 );
 
@@ -115,4 +115,13 @@ SELECT C.GivenName, c.Surname, E.TourName, T.Description, E.EventYear, E.EventMo
 INNER JOIN BOOKING B ON C.ClientID = B.ClientID
 INNER JOIN EVENT E ON E.TourName = B.TourName
 INNER JOIN TOUR T ON T.TourName = E.TourName;
+
+--Task 6
+SELECT * FROM CLIENT
+--From this- I got the results I should - all the colunms from CLIENT
+SELECT COUNT(*) FROM CLIENT
+--From this- I got the results I should - all the 4 colunms as a count from CLIENT
+
+/* Task 6- 
+I know they are working because I am getting the responses as I should, that means I've done Task 6 */
 
