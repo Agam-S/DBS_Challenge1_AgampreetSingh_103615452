@@ -75,14 +75,9 @@ VALUES ('North', 2016, 'Jan', 9, 200),
 ('South', 2016, 'Jan', 29, 200),
 ('West', 2016, 'Jan', 16, 225);
 
-INSERT INTO Booking(ClientID, TourName, EventYear, EventMonth, EventDay, Payment, DateBooked)
-VALUES (2, 'North', 2016, 'Feb', 9, 200, '2015/12/16'),
-(1, 'North', 2016, 'Feb', 13, 225, '2016/01/08'),
-(2, 'North', 2016, 'Jan', 13, 125, '2016/01/14'),
-(3, 'North', 2016, 'Feb', 13, 225, '2016/02/03'),
-(1, 'South', 2016, 'Jan', 9, 200, '2015/12/10'),
-(2, 'South', 2016, 'Jan', 16, 200, '2015/12/18'),
-(3, 'South', 2016, 'Jan', 16, 200, '2016/01/09'),
-(2, 'West', 2016, 'Jan', 29, 225, '2015/12/17'),
-(3, 'West', 2016, 'Jan', 29, 200, '2015/12/18'),
-(4, 'West', 2016, 'Jan', 29, 200, '2015/12/15');
+INSERT INTO Booking(ClientID, TourName, EventYear, EventMonth, EventDay, Payment, DateBooked) VALUES (1, 'South', 2016, 'Jan', 9, 200, '2015-12-10');
+INSERT INTO Booking(ClientID, TourName, EventYear, EventMonth, EventDay, Payment, DateBooked) VALUES (2, 'South', 2016, 'Jan', 16, 200, '2015-12-18');
+INSERT INTO Booking(ClientID, TourName, EventYear, EventMonth, EventDay, Payment, DateBooked) VALUES (3, 'South', 2016, 'Jan', 16, 200, '2016-01-09');
+INSERT INTO Booking(ClientID, TourName, EventYear, EventMonth, EventDay, Payment, DateBooked) VALUES (2, 'West', 2016, 'Jan', 29, 225, '2015-12-17');
+INSERT INTO Booking(ClientID, TourName, EventYear, EventMonth, EventDay, Payment, DateBooked) VALUES (3, 'West', 2016, 'Jan', 29, 200, '2015-12-18');
+INSERT INTO Booking(ClientID, TourName, EventYear, EventMonth, EventDay, Payment, DateBooked) VALUES (4, 'West', 2016, 'Jan', 29, 200, '2015-12-15');
